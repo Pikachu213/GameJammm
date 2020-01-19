@@ -1,0 +1,14 @@
+
+# Godot-specific ignores
+.import/
+export.cfg
+# export_presets.cfg # we need that for *.txt export
+
+# Mono-specific ignores
+.mono/
+
+#Ignoring original version
+/ships_sources/**
+/templates/**
+/Library/**
+/Packeges/**
