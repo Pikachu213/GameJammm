@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -22,9 +23,14 @@ public class PlayerControler : MonoBehaviour
 
     public int health;
 
+    public bool disableShield;
+    private int lives = 2;
+
+    private int collected;
     void Start()
     {
         dashes = 2;
+        collected = 0;
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -76,6 +82,12 @@ public class PlayerControler : MonoBehaviour
         {
             dashes = 2;
         }
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Boss1 boss = collision.gameObject.GetComponent<Boss1>();
+            if(!boss.disableShield)
+                Destroy(gameObject);
+        }
     }
 
     public void TakeDamage(int damageAmount)
@@ -83,6 +95,12 @@ public class PlayerControler : MonoBehaviour
         health -= damageAmount;
 
         if (health <= 0)
-            Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Collect() {
+        collected++;
+        Debug.Log("collected");
     }
 }

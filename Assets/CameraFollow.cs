@@ -19,7 +19,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         //fail = new Vector3(0,0,-10);
-        transform.position = playerTransform.position;
+        //transform.position = playerTransform.position;
     }
 
     // Update is called once per frame
@@ -27,11 +27,11 @@ public class CameraFollow : MonoBehaviour
     {
         if (playerTransform != null)
         {
-            float clampedX = Mathf.Clamp(playerTransform.position.x, minX, maxX);
-            float clampedY = Mathf.Clamp(playerTransform.position.y, minY, maxY);
+            //float clampedX = Mathf.Clamp(playerTransform.position.x, minX, maxX);
+            //float clampedY = Mathf.Clamp(playerTransform.position.y, minY, maxY);
 
-            transform.position = Vector2.Lerp(transform.position, new Vector2(clampedX, clampedY), speed);
-            //transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, -27.2f);
+            //transform.position = Vector2.Lerp(transform.position, new Vector2(clampedX, clampedY), speed);
+            transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, -100.2f);
         }
     }
 }

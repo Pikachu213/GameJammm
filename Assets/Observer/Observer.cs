@@ -11,15 +11,18 @@ public class Observer : MonoBehaviour
 
     void Start()
     {
-        
+        Debug.Log("started");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(mushroom1.activated && mushroom2.activated)
+        Debug.Log("sadsa   "+boss.disableShield);
+        if (!mushroom1.activated && !mushroom2.activated)
         {
+
             boss.disableShield = true;
+            Debug.Log(boss.disableShield);
         }
     }
 }

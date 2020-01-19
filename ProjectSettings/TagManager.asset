@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Enemy
+  - Collectible
   layers:
   - Default
   - TransparentFX
@@ -14,9 +16,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - background
+  - playable
+  - ground
   - 
   - 
   - 
@@ -41,4 +43,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Projectiles
+    uniqueID: 2552167043
+    locked: 0
+  - name: backg
+    uniqueID: 2971508943
+    locked: 0
+  - name: play
+    uniqueID: 4211648255
     locked: 0
