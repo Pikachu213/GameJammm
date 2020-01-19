@@ -23,13 +23,16 @@ public class Boss1 : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(0, 0, rotation);
+        //transform.Rotate(0, 0, rotation);
         
         if (Time.time > attackTime)
             {
                 attackTime = Time.time + timeBetweenAttacks;
                 Shoot();
             }
+
+        shotPoints[0].Rotate(0,0,rotation);
+        shotPoints[1].Rotate(0, 0, rotation);
     }
 
     void Shoot() {
